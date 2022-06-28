@@ -1,7 +1,7 @@
 <?php
 require_once("../lib/connect.php");
 $consulta= "SELECT * FROM materias";
-$resultado = mysqli_query($connect, $consulta);
+$materias = mysqli_query($connect, $consulta);
 
 ?>
 
@@ -14,16 +14,19 @@ $resultado = mysqli_query($connect, $consulta);
     <title>materias - escuela-bd</title>
 </head>
 <body>
-    <h1>MATERIAS</h1> <table><thead>
-        <tr><th>ID</th>
-        <th>NOMBRE</th>
-        <th>LICENCIATURA</th>
-        <th>CUATRIMESTRE</th>
+    <h1>MATERIAS <small> <a href="#">Crear Materia</a></small> <small> <a href="../">Regresar</a></small> </h1> 
+    <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th>LICENCIATURA</th>
+          <th>CUATRIMESTRE</th>
         </tr>
     </thead>
     <tbody>
         <?php
-        while ($fila = mysqli_fetch_array($resultado))
+        while ($fila = mysqli_fetch_array($materias))
         {
         ?>
         <tr>
@@ -31,6 +34,9 @@ $resultado = mysqli_query($connect, $consulta);
             <td><?php echo $fila["nombre"]?> </td>
             <td><?php echo $fila["licenciatura"]?> </td>
             <td><?php echo $fila["cuatrimestre"]?> </td>
+            <td> <a href="#">Editar</a></td>
+            <td> <a href="#">Elimiar</a></td>
+            <td><a href=detail.php?id=<?php echo $fila['id'] ?>>Detalles</a></td>
 
         </tr>
         <?php    

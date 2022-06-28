@@ -1,8 +1,7 @@
 <?php
-require_once("../lib/connect.php");
-$consulta= "SELECT * FROM alumnos";
-$resultado = mysqli_query($connect, $consulta);
 
+require_once ("../lib/functions.php");
+$alumnos = get_all_alumnos($connect);
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +13,7 @@ $resultado = mysqli_query($connect, $consulta);
     <title>alumnos - escuela-bd</title>
 </head>
 <body>
-    <h1>ALUMNOS</h1> 
+    <h1>ALUMNOS <small> <a href="#">Crear Alumno</a></small> <small><a href="../">Regresar</a></small></h1> 
     <table>
         <thead>
             <tr>
@@ -31,18 +30,23 @@ $resultado = mysqli_query($connect, $consulta);
         </thead>
     <tbody>
         <?php
-        while ($fila = mysqli_fetch_array($resultado))
+        while ($fila = mysqli_fetch_array($alumnos))
         {
         ?>
         <tr>
-            <td><?php echo $fila["id"]?> </td>
-            <td><?php echo $fila["nombre"]?> </td>
-            <td><?php echo $fila["apellidos"]?> </td>
-            <td><?php echo $fila["telefono"]?> </td>
-            <td><?php echo $fila["correo"]?> </td>
-            <td><?php echo $fila["licenciatura"]?> </td>
-            <td><?php echo $fila["cuatrimestre"]?> </td>
+            <td><?php echo $fila["id"]?></td>
+            <td><?php echo $fila["nombre"]?></td>
+            <td><?php echo $fila["apellidos"]?></td>
+            <td><?php echo $fila["telefono"]?></td>
+            <td><?php echo $fila["correo"]?></td>
+            <td><?php echo $fila["licenciatura"]?></td>
+            <td><?php echo $fila["cuatrimestre"]?></td>
             <td><?php echo $fila["estatus"]?> </td>
+            <td> <a href="#">Editar</a></td>
+            <td> <a href="#">Elimiar</a></td>
+            <td><a href=detail.php?id=<?php echo $fila['id'] ?>>Detalles</a></td>
+            
+
         </tr>
         <?php    
         }

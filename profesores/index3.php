@@ -1,8 +1,7 @@
 <?php
-require_once("../lib/connect.php");
-$consulta= "SELECT * FROM profesores";
-$resultado = mysqli_query($connect, $consulta);
 
+require_once ("../lib/functions.php");
+$profesores = get_all_profesores($connect);
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +13,9 @@ $resultado = mysqli_query($connect, $consulta);
     <title>PROFESORES - escuela-bd</title>
 </head>
 <body>
-    <h1>PROFESORES</h1> <table><thead>
+    <h1>PROFESORES <small> <a href="#">Crear Profesor</a></small> <small> <a href="../">Regresar</a></small></h1> 
+    <table>
+        <thead>
         <tr><th>ID</th>
         <th>NOMBRE</th>
         <th>APELLIDOS</th>
@@ -26,7 +27,7 @@ $resultado = mysqli_query($connect, $consulta);
     </thead>
     <tbody>
         <?php
-        while ($fila = mysqli_fetch_array($resultado))
+        while ($fila = mysqli_fetch_array($profesores))
         {
         ?>
         <tr>
@@ -36,6 +37,9 @@ $resultado = mysqli_query($connect, $consulta);
             <td><?php echo $fila["telefono"]?> </td>
             <td><?php echo $fila["correo"]?> </td>
             <td><?php echo $fila["estatus"]?> </td>
+            <td> <a href="#">Editar</a></td>
+            <td> <a href="#">Elimiar</a></td>
+            <td> <a href=detail.php?id=<?php echo $fila['id'] ?>>Detalles</a></td>
         </tr>
         <?php    
         }
