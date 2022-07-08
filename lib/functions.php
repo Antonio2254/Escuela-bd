@@ -39,5 +39,31 @@ function get_materia ($connect, $id){
 }
 
 
+function insertar_alumnos($nombre,$apellidos,$telefono,$correo,$licenciatura,$cuatrimestre,$estatus){
+    global $connect;
+    $consulta = "INSERT INTO alumnos(nombre, apellidos, telefono, correo, licenciatura, cuatrimestre, estatus) 
+    values ('$nombre', '$apellidos', '$telefono', '$correo', '$licenciatura', '$cuatrimestre', '$estatus')";
+    $resultado = mysqli_query ($connect, $consulta);
+    //return $resultado
+  
+}
+
+function insertar_profesores($nombre,$apellidos,$telefono,$correo,$estatus){
+    global $connect;
+    $consulta = "INSERT INTO profesores(nombre, apellidos, telefono, correo, estatus) 
+    values ('$nombre', '$apellidos', '$telefono', '$correo', '$estatus')";
+    $resultado = mysqli_query ($connect, $consulta);
+    //return $resultado
+  
+}
+
+function insertar_materias($nombre,$licenciatura,$cuatrimestre){
+    global $connect;
+    $consulta = "INSERT INTO materias(nombre, licenciatura, cuatrimestre) 
+    values ('$nombre', '$licenciatura', '$cuatrimestre')";
+    $resultado = mysqli_query ($connect, $consulta);
+    //return $resultado
+  
+}
 
 ?>

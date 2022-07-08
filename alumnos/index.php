@@ -13,7 +13,7 @@ $alumnos = get_all_alumnos($connect);
     <title>alumnos - escuela-bd</title>
 </head>
 <body>
-    <h1>ALUMNOS <small> <a href="#">Crear Alumno</a></small> <small><a href="../">Regresar</a></small></h1> 
+    <h1>ALUMNOS <small> <a href="insert.php">Crear Alumno</a></small> <small><a href="../">Regresar</a></small></h1> 
     <table>
         <thead>
             <tr>

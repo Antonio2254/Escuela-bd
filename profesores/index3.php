@@ -13,7 +13,7 @@ $profesores = get_all_profesores($connect);
     <title>PROFESORES - escuela-bd</title>
 </head>
 <body>
-    <h1>PROFESORES <small> <a href="#">Crear Profesor</a></small> <small> <a href="../">Regresar</a></small></h1> 
+    <h1>PROFESORES <small> <a href="insert.php">Crear Profesor</a></small> <small> <a href="../">Regresar</a></small></h1> 
     <table>
         <thead>
         <tr><th>ID</th>
