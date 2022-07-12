@@ -8,8 +8,9 @@ $correo = $_POST ["correo"];
 $licenciatura = $_POST ["licenciatura"];
 $cuatrimestre = $_POST ["cuatrimestre"];
 $estatus = $_POST ["estatus"];
+$id = $_POST ["id"];
 
-insertar_alumnos ($nombre, $apellido, $telefono, $correo, $licenciatura, $cuatrimestre, $estatus);
+update_alumnos ($nombre, $apellido, $telefono, $correo, $licenciatura, $cuatrimestre, $estatus, $id);
 
 header("Location: index.php")
 

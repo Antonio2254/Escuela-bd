@@ -13,7 +13,7 @@ $alumnos = get_all_alumnos($connect);
     <title>alumnos - escuela-bd</title>
 </head>
 <body>
-    <h1>ALUMNOS <small> <a href="#">Crear Alumno</a></small> <small><a href="../">Regresar</a></small></h1> 
+    <h1>ALUMNOS <small> <a href="insert.php">Crear Alumno</a></small> <small><a href="../">Regresar</a></small></h1> 
     <table>
         <thead>
             <tr>
@@ -42,7 +42,7 @@ $alumnos = get_all_alumnos($connect);
             <td><?php echo $fila["licenciatura"]?></td>
             <td><?php echo $fila["cuatrimestre"]?></td>
             <td><?php echo $fila["estatus"]?> </td>
-            <td> <a href="#">Editar</a></td>
+            <td> <a href=Formulario_update.php?id=<?php echo $fila['id'] ?>>Editar</a></td>
             <td> <a href="#">Elimiar</a></td>
             <td><a href=detail.php?id=<?php echo $fila['id'] ?>>Detalles</a></td>
             

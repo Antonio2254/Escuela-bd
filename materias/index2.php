@@ -14,7 +14,7 @@ $materias = mysqli_query($connect, $consulta);
     <title>materias - escuela-bd</title>
 </head>
 <body>
-    <h1>MATERIAS <small> <a href="#">Crear Materia</a></small> <small> <a href="../">Regresar</a></small> </h1> 
+    <h1>MATERIAS <small> <a href="insert.php">Crear Materia</a></small> <small> <a href="../">Regresar</a></small> </h1> 
     <table>
         <thead>
         <tr>
