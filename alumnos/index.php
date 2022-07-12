@@ -43,8 +43,8 @@ $alumnos = get_all_alumnos($connect);
             <td><?php echo $fila["cuatrimestre"]?></td>
             <td><?php echo $fila["estatus"]?> </td>
             <td> <a href=Formulario_update.php?id=<?php echo $fila['id'] ?>>Editar</a></td>
-            <td> <a href="#">Elimiar</a></td>
-            <td><a href=detail.php?id=<?php echo $fila['id'] ?>>Detalles</a></td>
+            <td> <a href=Delete.php?id=<?php echo $fila['id'] ?>>Elimiar</a></td>
+            <td> <a href=detail.php?id=<?php echo $fila['id'] ?>>Detalles</a></td>
             
 
         </tr>

@@ -34,8 +34,8 @@ $materias = mysqli_query($connect, $consulta);
             <td><?php echo $fila["nombre"]?> </td>
             <td><?php echo $fila["licenciatura"]?> </td>
             <td><?php echo $fila["cuatrimestre"]?> </td>
-            <td> <a href="#">Editar</a></td>
-            <td> <a href="#">Elimiar</a></td>
+            <td> <a href="Formulario_update2.php?id=<?php echo $fila['id'] ?>">Editar</a></td>
+            <td> <a href=Delete2.php?id=<?php echo $fila['id'] ?>>Elimiar</a></td>
             <td><a href=detail.php?id=<?php echo $fila['id'] ?>>Detalles</a></td>
 
         </tr>

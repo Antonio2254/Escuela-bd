@@ -20,9 +20,9 @@ Formulario
 
 <form action="update2.php" method= "post">
     
-    <p> Nombre de la materia<input type="text" id= "nombre" name= "nombre"> </p>
-    <p> Licenciatura <input type="tex"id= "licenciatura" name= "licenciatura"> </p>
-    <p> Cuatrimestre <input type="tex"id= "cuatrimestre" name= "cuatrimestre"></p>
+    <p> Nombre de la materia<input type="text" id= "nombre"       name= "nombre"> </p>
+    <p> Licenciatura        <input type="tex"  id= "licenciatura" name= "licenciatura"> </p>
+    <p> Cuatrimestre        <input type="tex"  id= "cuatrimestre" name= "cuatrimestre"></p>
 
 
     <p> <input type="submit" value = "Mandar soli"></p>

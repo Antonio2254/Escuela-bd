@@ -37,8 +37,8 @@ $profesores = get_all_profesores($connect);
             <td><?php echo $fila["telefono"]?> </td>
             <td><?php echo $fila["correo"]?> </td>
             <td><?php echo $fila["estatus"]?> </td>
-            <td> <a href="#">Editar</a></td>
-            <td> <a href="#">Elimiar</a></td>
+            <td> <a href="Formulario_update3.php?id=<?php echo $fila['id'] ?>">Editar</a></td>
+            <td> <a href=Delete3.php?id=<?php echo $fila['id'] ?>>Elimiar</a></td>
             <td> <a href=detail.php?id=<?php echo $fila['id'] ?>>Detalles</a></td>
         </tr>
         <?php    

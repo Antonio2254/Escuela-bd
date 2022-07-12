@@ -66,11 +66,39 @@ function insertar_materias($nombre,$licenciatura,$cuatrimestre){
   
 }
 
-
-
-function update_alumnos ($nombre,$apellido,$telefono,$correo,$licenciatura,$cuatrimestre,$estatus,$id){
+function update_alumnos ($nombre, $apellido, $telefono, $correo, $licenciatura, $cuatrimestre, $estatus, $id){
     global $connect;
-    $consulta = "UPDATE alumnos SET nombre='$nombre',apellido='$apellido',telefono='$telefono',correo='$correo',licenciatura='$licenciatura',cuatrimestre='$cuatrimestre',estatus='$estatus',WHERE id = $id";
-    $resultado = mysqli_query ($connect, $consulta);
+    $consulta ="UPDATE alumnos SET nombre='$nombre', apellidos='$apellido', telefono='$telefono', correo='$correo', licenciatura='$licenciatura', cuatrimestre='$cuatrimestre', estatus='$estatus' WHERE id=$id";
+    $resultado=mysqli_query($connect, $consulta);
+}
+
+
+function update_profesores ($nombre, $apellido, $telefono, $correo, $estatus, $id){
+    global $connect;
+    $consulta ="UPDATE profesores SET nombre='$nombre', apellidos='$apellido', telefono='$telefono', correo='$correo', estatus='$estatus' WHERE id=$id";
+    $resultado=mysqli_query($connect, $consulta);
+}
+
+function update_materias ($nombre, $licenciatura, $cuatrimestre, $id){
+    global $connect;
+    $consulta ="UPDATE materias SET nombre='$nombre', licenciatura='$licenciatura', cuatrimestre='$cuatrimestre' WHERE id='$id'";
+    $resultado= mysqli_query ($connect, $consulta);
+}
+function delete_alumnos ($id){
+    global $connect;
+    $consulta = "DELETE FROM alumnos WHERE id =$id";
+    $resultado= mysqli_query ($connect, $consulta);
+}
+
+function delete_profesores ($id){
+    global $connect;
+    $consulta = "DELETE FROM profesores WHERE id =$id";
+    $resultado= mysqli_query ($connect, $consulta);
+}
+
+function delete_materias ($id){
+    global $connect;
+    $consulta = "DELETE FROM materias WHERE id =$id";
+    $resultado= mysqli_query ($connect, $consulta);
 }
 ?>
